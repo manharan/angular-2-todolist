@@ -7,6 +7,7 @@ import { Component } from "@angular/core";
     <ul>
       <li *ngFor="let user of userList"> {{user}} </li>
     </ul>
+    <button class="btn btn-primary" (click)='adduser()'> Add List </button>
   </div>`
 
 })
@@ -17,6 +18,11 @@ export class ListComponent {
   constructor () {
     this.name = 'Manharan Lal Sahu';
     this.userList = ['Amit', 'Manaharan', 'Sandeep'];
+
+  }
+  adduser = function () {
+    this.userList.push('Manpreet');
+    
   }
 
 }

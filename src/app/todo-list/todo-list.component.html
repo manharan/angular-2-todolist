@@ -1,0 +1,32 @@
+<div>
+  <!--<list-component> </list-component>-->
+  <form name='todoForm' novalidate (submit)="submit()">
+    <div class="form-group">
+      <label> Enter your Todo .. </label>
+      <div class="input-group">
+        <input type="text" [(ngModel)]="userTodo.firstName" name="firstName" class="form-control"/>
+        <a href="javascript:void(0)" (click)="addTodo()" class="input-group-addon"> ADD </a>
+      </div>
+    </div>
+  </form>
+  <table class="table">
+      <thead>
+        <tr>
+            <th> S. No. </th>
+            <th> Todo  </th>
+            <th> Achived </th>
+            <th>  </th>
+            <th>  </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos">
+          <td> {{todo.id}}</td>
+          <td> {{ todo.label }} </td>
+          <td> <input type="checkbox"  /></td>
+          <td> <a [routerLink]="['edit', todo.id]"> Edit </a></td>
+          <td> <a href="javascript:void(0)" (click)="deleteTodo(todo.id)" > X </a></td>
+        </tr>
+      </tbody>
+  </table>
+</div>
