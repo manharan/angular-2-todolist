@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import {TodoServiceService} from '../todo-service.service'
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
+  providers: [TodoServiceService]
+
 })
 //implements OnInit
 export class TodoListComponent {
-  //todos:any[];
-  //constructor() { }
+  todos:any[];
+  labelAddBtn: string = 'ADD';
+  editTodoItemID: number;
+  constructor(private _todoService: TodoServiceService) { }
 
   userTodo:Object = {};
   deleteTodo = function (index) {
@@ -19,18 +24,28 @@ export class TodoListComponent {
     this.addTodo();
   }
   addTodo = function () {
-    this.todos.push({id:(this.todos.length + 1), label: this.userTodo.firstName, archived:false});
+    if(this.labelAddBtn == 'UPDATE') {
+      this.labelAddBtn = 'ADD'
+        for(var i=0; i<this.todos.length; i++) {
+          if(this.todos[i].id == this.editTodoItemID) {
+              this.todos[i].label =  this.userTodo.firstName;
+          }
+        }
+    } else {
+      if(!this.userTodo.firstName){return}
+      this.todos.push({id:(this.todos.length + 1), label: this.userTodo.firstName, archived:false});
+    }
     this.userTodo.firstName = '';
   }
-  todos = [
-    {id:1, label:'every saturday wash the clothes', archived:false},
-    {id:2, label:'every saturday wash the clothes', archived:false},
-    {id:3, label:'every saturday wash the clothes', archived:false},
-    {id:4, label:'every saturday wash the clothes', archived:false},
-    {id:5, label:'every saturday wash the clothes', archived:false}
-  ]
+ editTodo = function (todo) {
+   this.editTodoItemID = todo.id;
+   this.userTodo.firstName = todo.label;
+   this.labelAddBtn = 'UPDATE';
+ }
 
   ngOnInit() {
+    this.todos = this._todoService.getTodoList();
+    console.log('service injectable '+this._todoService.getTodoList())
   }
 
 }

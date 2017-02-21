@@ -5,7 +5,7 @@
       <label> Enter your Todo .. </label>
       <div class="input-group">
         <input type="text" [(ngModel)]="userTodo.firstName" name="firstName" class="form-control"/>
-        <a href="javascript:void(0)" (click)="addTodo()" class="input-group-addon"> ADD </a>
+        <a href="javascript:void(0)" (click)="addTodo()" class="input-group-addon"> {{labelAddBtn}} </a>
       </div>
     </div>
   </form>
@@ -24,7 +24,7 @@
           <td> {{todo.id}}</td>
           <td> {{ todo.label }} </td>
           <td> <input type="checkbox"  /></td>
-          <td> <a [routerLink]="['edit', todo.id]"> Edit </a></td>
+          <td> <a href="javascript:void(0)" (click)='editTodo(todo)'> Edit </a></td>
           <td> <a href="javascript:void(0)" (click)="deleteTodo(todo.id)" > X </a></td>
         </tr>
       </tbody>
