@@ -1,0 +1,24 @@
+<div>
+  <h2> You Submited the following </h2>
+  <div class="row">
+    <div class="col-xs-4"> User Name </div>
+    <div class="col-xs-8"> {{model.name}} </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4"> User Email Id </div>
+    <div class="col-xs-8"> {{model.email}} </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4"> User Contact Number </div>
+    <div class="col-xs-8"> {{model.mobile}} </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4"> User Password </div>
+    <div class="col-xs-8"> {{model.password}} </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4"> User Gender </div>
+    <div class="col-xs-8"> {{model.gender}} </div>
+  </div>
+  <button class="btn btn-primary" (click)="editRegistration()"> Edit </button>
+</div>
