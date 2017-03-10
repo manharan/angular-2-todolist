@@ -1,0 +1,36 @@
+.dashboard-label, .product-list-item {
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+  width: 222px;
+  float: left;
+
+}
+
+.product-list-item img{
+  height: 200px;
+  width: auto;
+}
+
+
+.product-list-item .brand-header{
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.product-list-item .price-intro{
+  font-size: 16px;
+  font-weight: 500;
+  color: #388e3c;
+}
+
+.product-list-item .product-category{
+  opacity: .6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.brand-header, .product-category, .price-intro {
+  padding-top: 8px;
+}

@@ -1,0 +1,46 @@
+.deals-of-the-day {
+  padding: 10px;
+  background: #FFF;
+  margin: 10px 0px;
+  vertical-align: middle;
+  margin: 10px 0px;
+  border: 1px solid gray;
+}
+.all-product-category {
+  
+}
+
+.deals-of-the-day:after, .deals-of-the-day:before{
+  display: table;
+  content: ' ';
+  clear: both;
+}
+
+/*
+.deals-of-the-day span {
+  clear: both;
+  content: '';
+  display: table;
+}
+*/
+.dashboard-label {
+  width: 230px;
+}
+
+.product-list-container {
+  width: calc(100% - 230px);
+  box-sizing: border-box;
+  float: left;
+  overflow: hidden;
+  max-height: 320px;
+}
+
+
+.dashboard-label, .product-list-item {
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+  width: 222px;
+  float: left;
+
+}

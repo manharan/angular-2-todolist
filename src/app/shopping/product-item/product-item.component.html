@@ -1,0 +1,10 @@
+<a [routerLink]="['../../productDetails/', productItem.id]">
+  <div class="product-list-item">
+    <img src="assets/mens_clothing.jpg" />
+    <div>
+      <div class="brand-header"> {{productItem.name}} </div>
+      <div class="price-intro">Under &#8377;{{productItem.price}} </div>
+      <div class="product-category"> {{productItem.category}} </div>
+    </div>
+  </div>
+</a>
