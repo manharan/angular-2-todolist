@@ -9,7 +9,7 @@ import { FormModel } from "../form/form-model";
 export class RegistrationDetailsComponent implements OnInit {
 
   @Input() model:FormModel;
-  @Output() onEdit: EventEmitter = new EventEmitter();
+  @Output() onEdit: EventEmitter<Boolean> = new EventEmitter();
   constructor() { }
 
   editRegistration() {

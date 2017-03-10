@@ -13,12 +13,21 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { FormComponent } from './form/form.component';
 import { EditTodoComponent } from './edit-todo/edit-todo.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
-import { RegistrationDetailsComponent } from './registration-details/registration-details.component'
+import { RegistrationDetailsComponent } from './registration-details/registration-details.component';
+import { ShoppingComponent } from './shopping/shopping.component';
+import { FacebookComponent } from './facebook/facebook.component';
+import { TwitterComponent } from './twitter/twitter.component';
+import { GmailComponent } from './gmail/gmail.component';
+import { ShoppingDashboardComponent } from './shopping/shopping-dashboard/shopping-dashboard.component';
+import { ShoppingListComponent } from './shopping/shopping-list/shopping-list.component';
+import { ProductItemComponent } from './shopping/product-item/product-item.component'
 
+import {ShoppingService} from "./shopping.service";
+import { ProductDetailsComponent } from './shopping/product-details/product-details.component'
 
 @NgModule({
   declarations: [
-    AppComponent, ListComponent, NavigationComponent, TodoListComponent, FormComponent, EditTodoComponent, TodoFormComponent, RegistrationDetailsComponent
+    AppComponent, ListComponent, NavigationComponent, TodoListComponent, FormComponent, EditTodoComponent, TodoFormComponent, RegistrationDetailsComponent, ShoppingComponent, FacebookComponent, TwitterComponent, GmailComponent, ShoppingDashboardComponent, ShoppingListComponent, ProductItemComponent, ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +35,7 @@ import { RegistrationDetailsComponent } from './registration-details/registratio
     HttpModule,
     routes
   ],
-  providers: [],
+  providers: [ShoppingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

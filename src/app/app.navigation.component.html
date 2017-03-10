@@ -10,9 +10,7 @@
       <a class="navbar-brand" href="#">Todo</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="home" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="form" routerLinkActive="active">Form</a></li>
-        <li><a routerLink="edit" routerLinkActive="active">Edit</a></li>
+        <li *ngFor="let nav of navigationList"> <a routerLink="{{nav.path}}" routerLinkActive="active"> {{nav.label}} </a> </li>
       </ul>
   </div>
 </nav>
